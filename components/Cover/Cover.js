@@ -3,14 +3,14 @@ import React from "react";
 
 const Cover = ({ children, background }) => {
   return (
-    <div className="h-screen text-black bg-red-100 bg-cover relative min-h-[400px] flex items-center justify-center">
+    <div className="h-[60vh] text-black bg-cover relative min-h-[400px] flex items-center justify-center w-full">
       <Image
         src={background}
         alt="cover"
         fill
         priority
-        sizes="80vw"
-        className="object-cover mix-blend-soft-light"
+        sizes="100vw"
+        className="object-cover object-top"
       />
       <div className="max-w-5xl z-10">{children}</div>
     </div>
