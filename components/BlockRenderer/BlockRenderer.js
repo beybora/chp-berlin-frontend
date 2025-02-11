@@ -1,3 +1,4 @@
+import CardGrid from "components/CardGrid/CardGrid";
 import Column from "components/Column/Column";
 import Columns from "components/Columns/Columns";
 import ContactForm from "components/ContactForm/ContactForm";
@@ -11,9 +12,11 @@ import TickList from "components/TickList/TickList";
 import Image from "next/image";
 
 export const BlockRenderer = ({ blocks }) => {
-  console.log(blocks.map((block) => block));
-  return blocks.map((block) => {
+  console.log(blocks?.map((block) => block));
+  return blocks?.map((block) => {
     switch (block.name) {
+      case "lazyblock/card-grid":
+        return <CardGrid key={block.id} />;
       case "lazyblock/tick-item":
         return <TickList key={block.id} attributes={block.attributes} />;
       case "core/gallery":
@@ -43,7 +46,8 @@ export const BlockRenderer = ({ blocks }) => {
           />
         );
       case "core/cover":
-        return (
+        console.log(block,  "ICh bin ein cover");
+      return (
           <Cover key={block.id} background={block.attributes.url}>
             <BlockRenderer blocks={block.innerBlocks} />
           </Cover>
