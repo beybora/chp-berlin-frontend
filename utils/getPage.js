@@ -8,9 +8,6 @@ export const getPage = async (uri) => {
         ... on Page {
           blocks
         }
-        ... on Property {
-          blocks
-        }
       }
     }
   `,
@@ -28,7 +25,7 @@ export const getPage = async (uri) => {
   });
   const { data } = await response.json();
   
-  if (!data.nodeByUri) {
+  if (!data?.nodeByUri) {
     return null;
   }
   const blocks = cleanAndTransformBlocks(data.nodeByUri.blocks);

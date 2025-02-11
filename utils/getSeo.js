@@ -31,7 +31,7 @@ export const getSeo = async (uri) => {
       body: JSON.stringify(params),
     });
     const { data } = await response.json();
-    if (!data.nodeByUri) {
+    if (!data?.nodeByUri) {
       return null;
     }
     return data.nodeByUri.seo;

@@ -8,7 +8,6 @@ export const getMenu = async () => {
           id
           label
           url
-          parentId
         }
       }
     }   
