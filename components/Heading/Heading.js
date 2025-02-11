@@ -1,11 +1,15 @@
-import React from 'react'
-import { getFontSize, getTextAlign } from 'utils/fonts';
+import React from "react";
+import { getFontSize, getTextAlign } from "utils/fonts";
+
 const Heading = ({ content, level = 2, textAlign }) => {
-  const tag = React.createElement(`h${level}`, {
-    className: `font-heading max-w-5xl mx-auto mb-5 ${getFontSize(level)} ${getTextAlign(textAlign)}`
-  }, content);
+  const Tag = `h${level}`;
 
-  return tag;
-}
+  return (
+    <Tag
+      className={`max-w-5xl mx-auto mb-1000 ${getFontSize(level)} ${getTextAlign(textAlign)}`}
+      dangerouslySetInnerHTML={{ __html: content }} // HTML sicher rendern
+    />
+  );
+};
 
-export default Heading 
+export default Heading;
