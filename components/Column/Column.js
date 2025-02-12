@@ -5,7 +5,7 @@ const Column = ({ children, width }) => {
     ? { minWidth: width, flexGrow: 1 }
     : { flexGrow: 1, flexBasis: 0 };
   return (
-    <div style={widthStyle} className="px-2 py-5">
+    <div style={widthStyle} className="p-10">
       {children}
     </div>
   );
