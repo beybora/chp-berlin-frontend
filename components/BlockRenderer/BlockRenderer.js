@@ -9,12 +9,15 @@ import Paragraph from "components/Paragraph/Paragraph";
 import PropertyFeatures from "components/PropertyFeatures/PropertyFeatures";
 import PropertySearch from "components/PropertySearch/PropertySearch";
 import TickList from "components/TickList/TickList";
+import EventsList from "components/EventList/EventList";
 import Image from "next/image";
 
 export const BlockRenderer = ({ blocks }) => {
   console.log(blocks?.map((block) => block));
   return blocks?.map((block) => {
     switch (block.name) {
+      case "lazyblock/event-list":
+        return <EventsList key={block.id} />;
       case "lazyblock/card-grid":
         return <CardGrid key={block.id} />;
       case "lazyblock/tick-item":
@@ -46,8 +49,8 @@ export const BlockRenderer = ({ blocks }) => {
           />
         );
       case "core/cover":
-        console.log(block,  "ICh bin ein cover");
-      return (
+        console.log(block, "ICh bin ein cover");
+        return (
           <Cover key={block.id} background={block.attributes.url}>
             <BlockRenderer blocks={block.innerBlocks} />
           </Cover>
