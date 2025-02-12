@@ -5,7 +5,7 @@ import { relativeToAbsoluteUrls } from "utils/relativeToAbsoluteUrls";
 export const Paragraph = ({ content, textAlign }) => {
   return (
     <p
-      className={`max-w-5xl mx-auto ${getTextAlign(textAlign)}`}
+      className={`text-paragraph ${getTextAlign(textAlign)}`}
       dangerouslySetInnerHTML={{ __html: relativeToAbsoluteUrls(content) }}
     />
   );

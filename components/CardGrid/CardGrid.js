@@ -1,3 +1,5 @@
+import ButtonLink from "components/ButtonLink/ButtonLink";
+
 const CardGrid = ({ title = "ÇALIŞMALARIMIZ" }) => {
     // Standard-Daten für die Karten
     const items = [
@@ -19,11 +21,11 @@ const CardGrid = ({ title = "ÇALIŞMALARIMIZ" }) => {
     ];
   
     return (
-      <div className="p-10 bg-[#E30A17] flex flex-col items-center">
+      <div className="p-10 bg-[#787878] flex flex-col items-center">
         {/* Container für bessere Kontrolle */}
-        <div className="w-full max-w-6xl">
+        <div className="w-full max-w-5xl">
           {/* Überschrift links ausgerichtet auf Höhe der ersten Karte */}
-          <h2 className="text-4xl font-bold text-white py-2 inline-block mb-6">
+          <h2 className="text-h4 font-bold text-white py-2 inline-block mb-6">
             {title}
           </h2>
   
@@ -38,9 +40,9 @@ const CardGrid = ({ title = "ÇALIŞMALARIMIZ" }) => {
                 <div className="relative bg-white p-4 shadow-lg min-h-[320px] flex flex-col justify-between overflow-hidden">
                   <img src={item.image} alt={item.title} className="w-full h-32 object-cover" />
                   <div className="mt-4 flex flex-col justify-between flex-grow">
-                    <h3 className="font-bold text-lg text-black">{item.title}</h3>
-                    <p className="text-sm text-black">{item.description}</p>
-                    <div className="flex justify-end mt-4 text-black">➡</div>
+                    <h3 className="text-h5 font-bold text-black">{item.title}</h3>
+                    <p className="text-subtitle text-black">{item.description}</p>
+                    <ButtonLink destination="/" label="Mehr erfahren" type="white" />
                   </div>
                 </div>
               </div>

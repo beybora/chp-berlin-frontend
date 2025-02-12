@@ -32,7 +32,7 @@ export const MainMenu = ({ menuItems }) => {
       {/* Zitat-Leiste */}
       <div className="bg-[#053D5D] text-white p-2">
         <div className="mx-auto flex justify-end">
-          <span className="italic text-[12px]">
+          <span className="text-subtitle text-white italic text-[12px]">
             "Benim iki büyük eserim var; biri Türkiye Cumhuriyeti diğeri
             Cumhuriyet Halk Partisi."
           </span>
@@ -42,7 +42,7 @@ export const MainMenu = ({ menuItems }) => {
       {/* Haupt-Navigation */}
       <div className="bg-[#E30A17] text-white px-5 h-16 sticky top-0 z-50 flex justify-between items-center">
         {/* Logo */}
-        <div className="py-4 pl-5 text-2xl font-bold">
+        <div className="py-4 pl-5 text-h4 font-bold">
           <Link href="/"> CHP Berlin Birligi </Link>
         </div>
 
@@ -83,7 +83,7 @@ export const MainMenu = ({ menuItems }) => {
 const MenuItem = ({ item }) => {
   return (
     <div className="relative group">
-      <Link href={item.url} className="px-4 py-5 rounded-md cursor-pointer inline-block">
+      <Link href={item.url} className="px-4 py-5 rounded-md cursor-pointer inline-block text-h6">
         {item.label}
       </Link>
 
@@ -104,7 +104,7 @@ const MobileMenuItem = ({ item }) => {
 
   return (
     <div className="flex flex-col">
-      <button className="flex justify-between py-2" onClick={() => setOpen(!open)}>
+      <button className="flex justify-between py-2 btn-white" onClick={() => setOpen(!open)}>
         {item.label}
         {item.children.length > 0 && <span>{open ? "▲" : "▼"}</span>}
       </button>
