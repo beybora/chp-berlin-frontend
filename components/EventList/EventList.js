@@ -2,10 +2,10 @@ import EventCard from "./EventCard/EventCard";
 
 const EventsList = () => {
     return (
-      <div className="w-full bg-red-500 py-10">
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-h4 font-bold">Bevorstehende Veranstaltungen</h2>
-          <p className="text-gray-600 mb-6">
+      <div className="w-full py-10">
+        <div className="max-w-5xl mx-auto container">
+          <h2 className="text-h3 font-bold">Bevorstehende Veranstaltungen</h2>
+          <p className="text-subtitle mb-6">
             Entdecken Sie unsere bevorstehenden Veranstaltungen und seien Sie Teil
             unserer spannenden Events und Networking-Möglichkeiten.
           </p>

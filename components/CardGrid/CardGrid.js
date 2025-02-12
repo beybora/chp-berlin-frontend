@@ -21,11 +21,11 @@ const CardGrid = ({ title = "ÇALIŞMALARIMIZ" }) => {
     ];
   
     return (
-      <div className="p-10 bg-[#787878] flex flex-col items-center">
+      <div className="py-10 bg-[#787878] flex flex-col items-center">
         {/* Container für bessere Kontrolle */}
-        <div className="w-full max-w-5xl">
+        <div className="w-full max-w-5xl container">
           {/* Überschrift links ausgerichtet auf Höhe der ersten Karte */}
-          <h2 className="text-h4 font-bold text-white py-2 inline-block mb-6">
+          <h2 className="text-h3 font-bold text-white py-2 inline-block mb-6">
             {title}
           </h2>
   

@@ -9,7 +9,7 @@ const Columns = ({
   return (
     <div className={`py-10 text-${textColor} bg-[${backgroundColor}]`}>
       <div
-        className={`max-w-5xl mx-auto gap-5 ${
+        className={`max-w-5xl mx-auto gap-5 container ${
           isStackedOnMobile ? "block md:flex" : "flex"
         }`}
       >
