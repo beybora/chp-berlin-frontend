@@ -10,12 +10,12 @@ export const getTextAlign = (textAlign = "left") => {
      
 export const getFontSize = (level) => {
     const fontSizeMap = {
-        1: "text-6xl",
-        2: "text-5xl",
-        3: "text-4xl",
-        4: "text-3xl",
-        5: "text-2xl",
-        6: "text-xl",
+        1: "text-h1",
+        2: "text-h2",
+        3: "text-h3",
+        4: "text-h4",
+        5: "text-h5",
+        6: "text-h6",
     }
 
     return `${fontSizeMap[level] || "text-base"}` ;
