@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["var(--font-aboreto)"],
-        body: ["var(--font-poppins )"],
+        heading: ["Montserrat", "sans-serif"], // Überschriften
+        body: ["Montserrat", "sans-serif"],    // Fließtext
       },
     },
   },
