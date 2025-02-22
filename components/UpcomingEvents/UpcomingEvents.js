@@ -1,5 +1,5 @@
 import { getEvents } from "../../utils/getEvents";
-import UpcomingEventCard from "./EventCard/UpcomingEventCard";
+import UpcomingEventCard from "./UcpmingEventCard/UpcomingEventCard";
 
 const UpcomingEvents = async () => {
   const events = await getEvents();
