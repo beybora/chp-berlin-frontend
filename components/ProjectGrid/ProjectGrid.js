@@ -28,6 +28,11 @@ const ProjectGrid = ({ title = "Calismalarimiz" }) => {
         description: "Topluluk projelerinin tartışılması ve planlanması için düzenli toplantılar.",
         image: "https://via.placeholder.com/300",
       },
+      {
+        title: "Toplantılar",
+        description: "Topluluk projelerinin tartışılması ve planlanması için düzenli toplantılar.",
+        image: "https://via.placeholder.com/300",
+      },
     ];
 
   
