@@ -12,19 +12,24 @@ import UpcomingEvents from "components/UpcomingEvents/UpcomingEvents";
 import Image from "next/image";
 import Membership from "components/Membership/Membership";
 import ProjectGrid from "components/ProjectGrid/ProjectGrid";
+import Events from "components/Events/Events";
 
 export const BlockRenderer = ({ blocks }) => {
   console.log(blocks?.map((block) => block));
   return blocks?.map((block) => {
     switch (block.name) {
+      case "lazyblock/events":
+        return <Events key={block.id} />;
+      case "lazyblock/upcoming-events":
+        return <UpcomingEvents key={block.id} />;
       case "lazyblock/membership":
         return <Membership key={block.id} />;
-      case "lazyblock/event-list":
+      case "lazyblock/upcoming-events":
         return <UpcomingEvents key={block.id} />;
       case "lazyblock/card-grid":
         return <ProjectGrid key={block.id} />;
       case "lazyblock/tick-item":
-        return <TickList key={block.id} attributes={block.attributes} />;
+        return <TickList key={block.id} attributes={block.attributes} />;a
       case "core/gallery":
         return (
           <Gallery
