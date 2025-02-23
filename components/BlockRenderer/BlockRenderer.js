@@ -1,4 +1,3 @@
-import CardGrid from "components/CardGrid/ProjectGrid";
 import Column from "components/Column/Column";
 import Columns from "components/Columns/Columns";
 import ContactForm from "components/ContactForm/ContactForm";
@@ -9,9 +8,10 @@ import Paragraph from "components/Paragraph/Paragraph";
 import PropertyFeatures from "components/PropertyFeatures/PropertyFeatures";
 import PropertySearch from "components/PropertySearch/PropertySearch";
 import TickList from "components/TickList/TickList";
-import UpcomingEvents from "components/EventList/UpcomingEvents";
+import UpcomingEvents from "components/UpcomingEvents/UpcomingEvents";
 import Image from "next/image";
 import Membership from "components/Membership/Membership";
+import ProjectGrid from "components/ProjectGrid/ProjectGrid";
 
 export const BlockRenderer = ({ blocks }) => {
   console.log(blocks?.map((block) => block));
@@ -22,7 +22,7 @@ export const BlockRenderer = ({ blocks }) => {
       case "lazyblock/event-list":
         return <UpcomingEvents key={block.id} />;
       case "lazyblock/card-grid":
-        return <CardGrid key={block.id} />;
+        return <ProjectGrid key={block.id} />;
       case "lazyblock/tick-item":
         return <TickList key={block.id} attributes={block.attributes} />;
       case "core/gallery":
