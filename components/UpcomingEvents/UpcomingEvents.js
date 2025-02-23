@@ -1,8 +1,8 @@
-import { getEvents } from "../../utils/getEvents";
-import UpcomingEventCard from "./UcpmingEventCard/UpcomingEventCard";
+import { getUpcomingEvents } from "../../utils/getUpcomingEvents";
+import UpcomingEventCard from "./UpcomingEventCard/UpcomingEventCard";
 
 const UpcomingEvents = async () => {
-  const events = await getEvents();
+  const events = await getUpcomingEvents();
   console.log(events);
   return (
       <div className="w-full py-10">

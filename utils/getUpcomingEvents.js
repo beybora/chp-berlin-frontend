@@ -1,6 +1,6 @@
 import { cleanAndTransformBlocks } from "./cleanAndTransformBlocks";
 
-export const getEvents = async () => {
+export const getUpcomingEvents = async () => {
   const params = {
     query: `
    query EventsQuery {
