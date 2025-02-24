@@ -14,9 +14,11 @@ export default async function EventPage({ params }) {
   }
 
   return (
-    <div>
-      <h1>{event.title}</h1>
-      <p>Beschreibung: {event.acf?.description || "Keine Beschreibung verfügbar"}</p>
+    <div className="mx-auto px-4 py-8 bg-red-500">
+      <div className="max-w-5xl mx-auto">
+        <h1 className="text-4xl font-bold">{event.title}</h1>
+        <p className="text-lg">Beschreibung: {event.acf?.description || "Keine Beschreibung verfügbar"}</p>
+      </div>
     </div>
   );
 }
