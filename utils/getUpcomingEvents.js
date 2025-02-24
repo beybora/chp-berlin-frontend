@@ -1,4 +1,3 @@
-import { cleanAndTransformBlocks } from "./cleanAndTransformBlocks";
 
 export const getUpcomingEvents = async () => {
   const params = {
