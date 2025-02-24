@@ -1,6 +1,7 @@
 import ButtonLink from "components/ButtonLink/ButtonLink";
+import { relativeToAbsoluteUrls } from "utils/relativeToAbsoluteUrls";
 
-const EventCard = ({ title, description, image }) => {
+const EventCard = ({ title, description, image, uri }) => {
   return (
     <div className="relative mr-5">
       <div className="relative bg-white p-4 shadow-lg min-h-[320px] flex flex-col justify-between overflow-hidden">
@@ -8,7 +9,7 @@ const EventCard = ({ title, description, image }) => {
         <div className="mt-4 flex flex-col justify-between flex-grow">
           <h3 className="text-xl font-bold text-black">{title}</h3>
           <p className="text-gray-700 text-base">{description}</p>
-          <ButtonLink destination="/" label="Mehr erfahren" type="white" />
+          <ButtonLink destination={relativeToAbsoluteUrls(uri)} label="Mehr erfahren" type="white" />
         </div>
       </div>
     </div>

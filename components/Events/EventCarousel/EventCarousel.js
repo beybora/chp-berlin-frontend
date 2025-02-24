@@ -39,6 +39,7 @@ const EventCarousel = ({ events }) => {
                         title={event.title}
                         description={event.description}
                         image={event.image}
+                        uri={event.uri}
                     />
                 ))}
             </Slider>

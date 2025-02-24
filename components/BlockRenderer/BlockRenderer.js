@@ -15,7 +15,7 @@ import ProjectGrid from "components/ProjectGrid/ProjectGrid";
 import Events from "components/Events/Events";
 
 export const BlockRenderer = ({ blocks }) => {
-  console.log(blocks?.map((block) => block));
+  // console.log(blocks?.map((block) => block));
   return blocks?.map((block) => {
     switch (block.name) {
       case "lazyblock/events":
