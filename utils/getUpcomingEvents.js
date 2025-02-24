@@ -1,24 +1,24 @@
-
 export const getUpcomingEvents = async () => {
   const params = {
     query: `
-   query EventsQuery {
-     events {
-       nodes {
-         acf {
-            date
-            description
-            time
-            name
-          }
-           id
-          title
-        }
-      }
+  query EventsQuery {
+  upcomingEvents {
+    nodes {
+      acf {
+        date
+        description
+        name
+        time
+      },
+      id
+      title
+      uri
     }
+  }
+}
   `,
   };
-  
+
   const response = await fetch(process.env.WP_GRAPHQL_URL, {
     method: "POST",
     headers: {
@@ -28,10 +28,10 @@ export const getUpcomingEvents = async () => {
   });
 
   const { data } = await response.json();
-
-  if (!data?.events?.nodes) {
+  
+  if (!data?.upcomingEvents?.nodes) {
     return null;
   }
 
-  return data.events.nodes;
+  return data.upcomingEvents.nodes;
 };
