@@ -11,7 +11,7 @@ import TickList from "components/TickList/TickList";
 import UpcomingEvents from "components/UpcomingEvents/UpcomingEvents";
 import Image from "next/image";
 import Membership from "components/Membership/Membership";
-import ProjectGrid from "components/ProjectGrid/ProjectGrid";
+import WorkGrid from "components/WorkGrid/WorkGrid";
 import Events from "components/Events/Events";
 
 export const BlockRenderer = ({ blocks }) => {
@@ -27,7 +27,7 @@ export const BlockRenderer = ({ blocks }) => {
       case "lazyblock/upcoming-events":
         return <UpcomingEvents key={block.id} />;
       case "lazyblock/card-grid":
-        return <ProjectGrid key={block.id} />;
+        return <WorkGrid key={block.id} />;
       case "lazyblock/tick-item":
         return <TickList key={block.id} attributes={block.attributes} />;a
       case "core/gallery":

@@ -1,6 +1,6 @@
-import ProjectCard from "./ProjectCard/ProjectCard";
+import WorkCard from "./WorkCard/WorkCard";
 
-const ProjectGrid = ({ title = "Calismalarimiz" }) => {
+const WorkGrid = ({ title = "Calismalarimiz" }) => {
     // Standard-Daten für die Karten
     const items = [
       {
@@ -48,7 +48,7 @@ const ProjectGrid = ({ title = "Calismalarimiz" }) => {
           {/* Grid-Layout für Karten */}
           <div className="grid gap-6 lg:grid-cols-3">
             {items.map((item, index) => (
-              <ProjectCard key={index} title={item.title} description={item.description} image={item.image} />
+              <WorkCard key={index} title={item.title} description={item.description} image={item.image} />
             ))}
           </div>
         </div>
@@ -56,4 +56,4 @@ const ProjectGrid = ({ title = "Calismalarimiz" }) => {
     );
   };
 
-export default ProjectGrid;
+export default WorkGrid;

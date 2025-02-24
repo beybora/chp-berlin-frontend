@@ -1,7 +1,7 @@
 import ButtonLink from "components/ButtonLink/ButtonLink";
 
   // Separate Card Component
-  const ProjectCard = ({ title, description, image }) => {
+  const WorkCard = ({ title, description, image }) => {
     return (
       <div className="relative">
         {/* Schwarzer Schatten hinter der Karte */}
@@ -19,4 +19,4 @@ import ButtonLink from "components/ButtonLink/ButtonLink";
     );
   };
   
-  export default ProjectCard;
+  export default WorkCard;
