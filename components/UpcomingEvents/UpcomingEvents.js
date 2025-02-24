@@ -1,9 +1,9 @@
-import { getUpcomingEvents } from "../../utils/getUpcomingEvents";
+import { getUpcomingEvents } from "utils/getUpcomingEvents";
 import UpcomingEventCard from "./UpcomingEventCard/UpcomingEventCard";
 
 const UpcomingEvents = async () => {
-  const events = await getUpcomingEvents();
-  console.log(events);
+  const upcomingEvents = await getUpcomingEvents();
+  
   return (
       <div className="w-full py-10">
         <div className="max-w-5xl mx-auto container">
@@ -12,7 +12,7 @@ const UpcomingEvents = async () => {
             Entdecken Sie unsere bevorstehenden Veranstaltungen
           </p>
           <div className="flex md:flex-row flex-col gap-4"> 
-            {events.map((event) => (
+            {upcomingEvents?.map((event) => (
               <UpcomingEventCard
                 date={event.acf.date}
                 title={event.title}
