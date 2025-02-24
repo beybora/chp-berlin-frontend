@@ -1,5 +1,3 @@
-import { cleanAndTransformBlocks } from "./cleanAndTransformBlocks";
-
 export const getEvents = async () => {
   const params = {
     query: `
@@ -12,14 +10,15 @@ export const getEvents = async () => {
             time
             name
           }
-           id
+          id
           title
+          uri
         }
       }
     }
   `,
   };
-  
+
   const response = await fetch(process.env.WP_GRAPHQL_URL, {
     method: "POST",
     headers: {
