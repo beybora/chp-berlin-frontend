@@ -13,11 +13,14 @@ import Image from "next/image";
 import Membership from "components/Membership/Membership";
 import WorkGrid from "components/WorkGrid/WorkGrid";
 import Events from "components/Events/Events";
+import DistrictRepresentatives from "components/DistrictRepresentatives/DistrictRepresentatives";
 
 export const BlockRenderer = ({ blocks }) => {
-  // console.log(blocks?.map((block) => block));
+   console.log(blocks?.map((block) => block));
   return blocks?.map((block) => {
     switch (block.name) {
+      case "lazyblock/district":
+        return <DistrictRepresentatives key={block.id} />;
       case "lazyblock/events":
         return <Events key={block.id} />;
       case "lazyblock/upcoming-events":
