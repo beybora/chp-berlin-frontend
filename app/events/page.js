@@ -18,8 +18,8 @@ export default async function EventsPage() {
   }
 
   return (
-    <div className="mx-auto px-4 py-8 bg-red-500">
-      <h1 className="text-4xl font-bold text-white text-center mb-6">Alle Veranstaltungen</h1>
+    <div className="mx-auto px-4 py-10 bg-red-500">
+      <h1 className="text-4xl font-bold text-white text-center mb-6 py-10">Gecmis Etkinliklerimiz</h1>
       
       <div className="max-w-5xl mx-auto grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
         {events.map((event) => (
@@ -34,7 +34,7 @@ export default async function EventsPage() {
       </div>
 
       <div className="flex justify-center mt-6">
-        <ButtonLink destination="/" label="Zurück zur Startseite" type="white" />
+        <ButtonLink destination="/" label="Anasayfaya Don" type="white" />
       </div>
     </div>
   );
