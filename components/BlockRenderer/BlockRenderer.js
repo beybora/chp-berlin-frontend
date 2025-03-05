@@ -14,6 +14,7 @@ import Membership from "components/Membership/Membership";
 import WorkGrid from "components/WorkGrid/WorkGrid";
 import Events from "components/Events/Events";
 import DistrictRepresentatives from "components/DistrictRepresentatives/DistrictRepresentatives";
+import AdministrationRepresentatives from "components/AdministrationRepresentatives/AdministrationRepresentatives";
 
 export const BlockRenderer = ({ blocks }) => {
    console.log(blocks?.map((block) => block));
@@ -21,6 +22,8 @@ export const BlockRenderer = ({ blocks }) => {
     switch (block.name) {
       case "lazyblock/district":
         return <DistrictRepresentatives key={block.id} />;
+      case "lazyblock/administration":
+        return <AdministrationRepresentatives key={block.id} attributes={block.attributes} />;
       case "lazyblock/events":
         return <Events key={block.id} />;
       case "lazyblock/upcoming-events":
