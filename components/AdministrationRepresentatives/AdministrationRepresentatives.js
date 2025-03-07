@@ -1,10 +1,12 @@
 import React from 'react'
 import { getAdministrationMembers } from 'utils/getAdministrationMembers';
 
+
 const AdministrationRepresentatives = async ({attributes}   ) => {
+
   const administrationMembers = await getAdministrationMembers();
-  console.log(attributes['explanation-text'], "attributes");
-  return (
+
+    return (
     <div className="w-full py-10">
       <div className="max-w-5xl mx-auto container">
         <h1 className="text-3xl font-bold flex justify-center">
@@ -16,8 +18,9 @@ const AdministrationRepresentatives = async ({attributes}   ) => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-20 py-10">
           {administrationMembers.map((member) => (
             <div key={member.id}>
-              <h2 className="text-lg font-bold">{member.acfFelder.name}</h2>
-              <p className="text-sm text-gray-500">{member.acfFelder.position}</p>
+              <h2 className="text-lg font-bold">{member.acfAdminRep.name}</h2>
+              <p className="text-sm text-gray-500">{member.acfAdminRep.position}</p>
+              
             </div>
           ))}
         </div>
