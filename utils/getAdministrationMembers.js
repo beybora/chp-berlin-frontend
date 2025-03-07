@@ -1,17 +1,18 @@
   export const getAdministrationMembers = async () => {
+    console.log("getAdministrationMembers");
     const params = {
       query: `
-    query DistrictQuery {
-    allYonetimKurulu {
-      nodes {
-        acfFelder {
-          name
-          position
-        }
-        id
+    query AdministrationMembersQuery {
+  allAdminRepresentatives {
+    nodes {
+      acfAdminRep {
+        position
+        name
       }
     }
   }
+}
+  
       `,
     };
 
@@ -25,9 +26,9 @@
 
     const { data } = await response.json();
 
-    if (!data?.allYonetimKurulu?.nodes) {
+    if (!data?.allAdminRepresentatives?.nodes) {
       return null;
     }
-    
-    return data.allYonetimKurulu.nodes;
+
+    return data.allAdminRepresentatives.nodes;
   };
