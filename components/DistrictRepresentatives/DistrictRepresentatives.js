@@ -1,30 +1,35 @@
 import React from "react";
-import { getAdministrationMembers } from "utils/getAdministrationMembers";
+import { getDistrictRepresentatives } from "utils/getDistrictRepresentatives";
 
-const DistrictRepresentatives = async ({ attributes }) => {
-  const administrationMembers = await getAdministrationMembers();
+const DistrictRepresentatives = async () => {
+  const districtData = await getDistrictRepresentatives(); // Holt bereits sortierte & gruppierte Daten
 
   return (
-    <div className="w-full py-10">
-      <div className="max-w-5xl mx-auto container">
-        <h1 className="text-3xl font-bold flex justify-center">
+    <div className="w-full py-20">
+      <div className="max-w-4xl mx-auto container">
+        <h1 className="text-h2 font-bold flex justify-center">
           CHP Berlin Birliği İlçe Temsilcileri
         </h1>
         <p className="text-center text-gray-500 py-5">
           CHP Berlin Birliği'nin İlçe Temsilcileri, Berlin'in farklı
           bölgelerinde partiyi temsil eden ve yerel düzeyde çalışmalar yürüten
-          önemli aktörlerdir. Bu temsilciler, bölgesel organizasyonları
-          düzenleyerek CHP üyelerini bir araya getirir, toplumsal konulara
-          duyarlılık oluşturur ve yerel sorunlara çözüm üretmek için aktif rol
-          oynarlar.
+          önemli aktörlerdir.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-20 py-10">
-          {administrationMembers.map((member) => (
-            <div key={member.id}>
-              <h2 className="text-lg font-bold">{member.acfFelder.name}</h2>
-              <p className="text-sm text-gray-500">
-                {member.acfFelder.position}
-              </p>
+
+        <div className="py-10 space-y-10">
+          {districtData.map(({ district, representatives }) => (
+            <div key={district}>
+            
+              <h3 className="text-h4 font-bold border-b pb-2 text-center">{district}</h3>
+
+              <div className="mt-3 space-y-2">
+                {representatives.map((rep) => (
+                  <div key={rep.id}>
+                    <h4 className="text-h5 font-semibold">{rep.acfFields.name}</h4>
+                    <p className="text-sm text-gray-500">{rep.acfFields.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
