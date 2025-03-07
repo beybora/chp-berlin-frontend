@@ -5,23 +5,32 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import ButtonLink from "components/ButtonLink/ButtonLink";
 import Link from "next/link";
 
-// Menüstruktur erstellen
+
 const buildMenuTree = (menuItems) => {
+  console.log("🔍 Menü-Daten aus API:", menuItems);
+
   const menuMap = new Map();
   const rootMenu = [];
 
-  menuItems.forEach((item) => menuMap.set(item.id, { ...item, children: [] }));
+  menuItems.forEach((item) => {
+    menuMap.set(item.id, { ...item, children: [] });
+  });
 
   menuItems.forEach((item) => {
-    if (item.parentId) {
-      menuMap.get(item.parentId)?.children.push(menuMap.get(item.id));
+    const currentItem = menuMap.get(item.id);
+    
+    if (item.parentId && menuMap.has(item.parentId)) {
+      menuMap.get(item.parentId)?.children.push(currentItem);
     } else {
-      rootMenu.push(menuMap.get(item.id));
+      if (!rootMenu.includes(currentItem)) {
+        rootMenu.push(currentItem);
+      }
     }
   });
 
   return rootMenu;
 };
+
 
 export const MainMenu = ({ menuItems }) => {
   const menu = buildMenuTree(menuItems);

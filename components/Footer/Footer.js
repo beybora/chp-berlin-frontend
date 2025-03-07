@@ -1,8 +1,7 @@
 import React from "react";
-import { getFooter } from "utils/getFooter";
 
 const Footer = async () => {
-  const footer = await getFooter();
+
 
   return (
     <footer className=" bg-black text-white p-6">
@@ -14,11 +13,7 @@ const Footer = async () => {
 
         {/* Menü */}
         <nav className="flex space-x-6">
-          {footer.map((item) => (
-            <a key={item.id} href={item.url} className="hover:text-gray-400">
-              {item.label}
-            </a>
-          ))}
+
         </nav>
 
         {/* Social Icons */}
