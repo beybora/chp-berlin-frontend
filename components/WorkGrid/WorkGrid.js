@@ -37,11 +37,11 @@ const WorkGrid = ({ title = "Calismalarimiz" }) => {
 
   
     return (
-      <div className="py-10 bg-[#E0E0E0] flex flex-col items-center">
+      <div className="py-20 bg-[#E0E0E0] flex flex-col items-center">
         {/* Container für bessere Kontrolle */}
         <div className="w-full max-w-5xl container">
           {/* Überschrift links ausgerichtet auf Höhe der ersten Karte */}
-          <h2 className="text-h2 font-bold text-black py-2 inline-block mb-6">
+          <h2 className="text-h2 font-bold text-black pb-5 inline-block mb-6">
             {title}
           </h2>
   
