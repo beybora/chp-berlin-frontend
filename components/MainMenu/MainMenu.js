@@ -64,7 +64,7 @@ export const MainMenu = ({ menuItems }) => {
 
         {/* "Üyemiz Ol" bleibt immer sichtbar */}
         <div className="flex items-center">
-          <ButtonLink destination={"/"} label={"Üyemiz Ol"} type="white" />
+          <ButtonLink destination={"/uye-ol"} label={"Üye ol"} type="white" />
 
           {/* Mobile Burger-Button (ab lg sichtbar) */}
           <button
