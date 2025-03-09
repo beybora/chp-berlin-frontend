@@ -16,6 +16,8 @@ import Events from "components/Events/Events";
 import DistrictRepresentatives from "components/DistrictRepresentatives/DistrictRepresentatives";
 import AdministrationRepresentatives from "components/AdministrationRepresentatives/AdministrationRepresentatives";
 import YouthClub from "components/YouthClub/YouthClub";
+import AboutUs from "components/AboutUs/AboutUs";
+import OrganizationalStructure from "components/OrganizationalStructure/OrganizationalStructure";
 
 export const BlockRenderer = ({ blocks }) => {
    console.log(blocks?.map((block) => block));
@@ -23,6 +25,10 @@ export const BlockRenderer = ({ blocks }) => {
     switch (block.name) {
       case "lazyblock/district":
         return <DistrictRepresentatives key={block.id} />;
+      case "lazyblock/about-us":
+        return <AboutUs key={block.id} />;
+      case "lazyblock/organizational-structure":
+        return <OrganizationalStructure key={block.id} />;
       case "lazyblock/administration":
         return <AdministrationRepresentatives key={block.id} attributes={block.attributes} />;
       case "lazyblock/youth-club":
